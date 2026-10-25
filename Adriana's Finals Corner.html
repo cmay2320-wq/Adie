@@ -1,0 +1,1014 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Adriana's Finals Corner</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DM+Mono:wght@500&family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap">
+<style>
+/* Layout: a soft pink sticker-book world. Hero = sticky note beside a tiny sun friend, then pastel sticker cards, then a handwritten letter. */
+:root {
+  --bg: #FFF0F6;
+  --dot: #FFD9E8;
+  --surface: #FFFFFF;
+  --field: #FFF6FA;
+  --ink: #3B2150;
+  --muted: #7A6490;
+  --line: #F6D3E3;
+  --outline: #3B2150;
+  --pink: #FF8DB8;
+  --hot: #D62F73;
+  --lav: #BBA8FF;
+  --butter: #FFD966;
+  --mint: #8EE3C2;
+  --sky: #9ED8FF;
+  --soft: #FFE4F0;
+  --on-accent: #3B2150;
+  --good: #3FBF93;
+  --display: "Fredoka", "Trebuchet MS", system-ui, sans-serif;
+  --body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --hand: "Caveat", "Comic Sans MS", cursive;
+  --mono: "DM Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1D1030; --dot: #281842; --surface: #2A1A42; --field: #34224F; --ink: #FFF0F7; --muted: #CDBBE4;
+    --line: #47306A; --outline: #8E6BC9; --pink: #FF9EC4; --hot: #FF9EC4; --lav: #C3B2FF; --soft: #3F2A5E;
+    --good: #5FE0B0; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1D1030; --dot: #281842; --surface: #2A1A42; --field: #34224F; --ink: #FFF0F7; --muted: #CDBBE4;
+  --line: #47306A; --outline: #8E6BC9; --pink: #FF9EC4; --hot: #FF9EC4; --lav: #C3B2FF; --soft: #3F2A5E;
+  --good: #5FE0B0; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background-color: var(--bg);
+  background-image: radial-gradient(var(--dot) 2px, transparent 2.5px);
+  background-size: 28px 28px;
+  color: var(--ink);
+  font: 400 1rem/1.55 var(--body);
+  padding-block: 22px 60px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+button, input { font: inherit; color: inherit; }
+h1, h2, h3, p { margin: 0; }
+:focus-visible { outline: 3px solid var(--hot); outline-offset: 3px; border-radius: 8px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+/* floating decorations */
+.floaties { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.floaty { position: absolute; opacity: .5; animation: drift var(--dur, 9s) ease-in-out var(--delay, 0s) infinite alternate; }
+.floaty svg { width: 100%; height: 100%; display: block; }
+@keyframes drift { from { transform: translateY(0) rotate(-10deg); } to { transform: translateY(-26px) rotate(12deg); } }
+
+.wrap { position: relative; z-index: 1; max-width: 1080px; margin-inline: auto; display: grid; gap: 34px; }
+
+/* top bar */
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.brand { display: flex; align-items: center; gap: 10px; font: 600 1.15rem var(--display); }
+.brand svg { width: 26px; height: 26px; color: var(--pink); flex: none; }
+
+/* buttons */
+.btn {
+  border: 2.5px solid var(--outline); background: var(--surface); border-radius: 999px;
+  padding: 0.55rem 1.15rem; font: 700 0.95rem var(--body); cursor: pointer;
+  box-shadow: 0 4px 0 var(--outline); transition: transform .12s ease, box-shadow .12s ease;
+}
+.btn:hover { transform: translateY(-1px); box-shadow: 0 5px 0 var(--outline); }
+.btn:active { transform: translateY(4px); box-shadow: 0 0 0 var(--outline); }
+.btn.primary { background: var(--butter); color: var(--on-accent); }
+.btn.pink { background: var(--pink); color: var(--on-accent); }
+.btn.small { padding: 0.4rem 0.85rem; font-size: 0.85rem; box-shadow: 0 3px 0 var(--outline); }
+.chip {
+  border: 2px solid var(--line); background: var(--field); border-radius: 999px;
+  padding: 0.4rem 0.95rem; font: 700 0.9rem var(--body); cursor: pointer; transition: transform .12s ease;
+}
+.chip:hover { transform: translateY(-1px); }
+.chip[aria-pressed="true"] { background: var(--pink); border-color: var(--outline); color: var(--on-accent); }
+
+/* hero */
+.hero { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 36px; align-items: center; }
+.eyebrow { font: 700 0.8rem var(--body); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.hero h1 { font: 600 clamp(1.5rem, 3.4vw, 2rem) var(--display); margin-top: 8px; }
+.name { background: linear-gradient(transparent 58%, var(--pink) 58% 90%, transparent 90%); padding-inline: 0.14em; border-radius: 4px; }
+.note {
+  --paper-note: #FFE88F;
+  position: relative; margin-top: 26px; padding: 28px 26px 18px; background: var(--paper-note); color: #3B2150;
+  border: 2.5px solid var(--outline); border-radius: 12px 12px 26px 12px; box-shadow: 7px 7px 0 var(--pink);
+  transform: rotate(-1.2deg);
+}
+.note::before {
+  content: ""; position: absolute; top: -15px; left: 50%; width: 104px; height: 28px; transform: translateX(-50%) rotate(3deg);
+  background: repeating-linear-gradient(45deg, rgba(255,141,184,.85) 0 8px, rgba(255,255,255,.7) 8px 16px);
+  border: 1.5px solid rgba(59,33,80,.25); border-radius: 3px;
+}
+.msg { font: 700 clamp(1.9rem, 5vw, 2.8rem)/1.08 var(--hand); text-wrap: balance; transition: opacity .25s ease; }
+.msg.fade { opacity: 0; }
+.sig { display: flex; justify-content: flex-end; align-items: center; gap: 6px; margin-top: 8px; font: 700 1.6rem var(--hand); }
+.sig svg { width: 22px; height: 22px; color: #D62F73; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.nudge { margin-top: 14px; color: var(--muted); font-weight: 600; }
+
+.sky {
+  --sky-top: #A8DCFF; --sky-bot: #FFD6E8; --hill-a: #9BE8C4; --hill-b: #55C79B; --arc: rgba(255,255,255,.75);
+  border: 2.5px solid var(--outline); border-radius: 30px; overflow: hidden; line-height: 0; min-width: 0; box-shadow: 7px 7px 0 var(--lav);
+}
+.sky.night { --sky-top: #2A1A5A; --sky-bot: #8456B5; --hill-a: #3A3A7A; --hill-b: #1E1650; --arc: rgba(255,255,255,.35); }
+.sky svg { width: 100%; height: auto; display: block; }
+.sky .stars, .sky .zzz { opacity: 0; }
+.sky.night .stars, .sky.night .zzz { opacity: 1; }
+.sky.night .rays, .sky.night .cloud { display: none; }
+.stars circle { animation: twinkle 2.6s ease-in-out infinite alternate; }
+.stars circle:nth-child(even) { animation-delay: 1.2s; }
+@keyframes twinkle { from { opacity: .35; } to { opacity: 1; } }
+.cloud { animation: float 14s ease-in-out infinite alternate; }
+.cloud.b { animation-duration: 18s; animation-direction: alternate-reverse; }
+@keyframes float { from { transform: translateX(-14px); } to { transform: translateX(16px); } }
+.bob { animation: bob 3.4s ease-in-out infinite alternate; }
+@keyframes bob { from { transform: translateY(-3px); } to { transform: translateY(4px); } }
+.rays { animation: spin 40s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.eye { transform-box: fill-box; transform-origin: center; animation: blink 5s infinite; }
+@keyframes blink { 0%, 94%, 100% { transform: scaleY(1); } 97% { transform: scaleY(0.1); } }
+
+/* progress pills */
+.strip { display: flex; flex-wrap: wrap; gap: 10px; }
+.pill {
+  display: inline-flex; align-items: center; gap: 8px; background: var(--surface); border: 2px solid var(--line); border-radius: 999px;
+  padding: 7px 16px; font-weight: 600; color: var(--muted);
+}
+.pill b { color: var(--ink); font-weight: 800; font-variant-numeric: tabular-nums; }
+.hearts { display: inline-flex; gap: 2px; }
+.hrt { width: 16px; height: 16px; color: var(--line); }
+.hrt.on { color: var(--pink); }
+
+/* tools grid */
+.tools { display: grid; gap: 38px 24px; grid-template-columns: minmax(0, 1fr); align-items: start; padding-top: 10px; }
+.card {
+  --c: var(--pink);
+  position: relative; background: var(--surface); border: 2.5px solid var(--outline); border-radius: 28px;
+  padding: 26px 22px 24px; box-shadow: 7px 7px 0 var(--c); display: grid; gap: 16px; min-width: 0;
+}
+.card .badge {
+  position: absolute; top: -20px; right: 20px; width: 48px; height: 48px; border-radius: 50%; background: var(--c);
+  border: 2.5px solid var(--outline); display: grid; place-items: center; transform: rotate(9deg); color: #3B2150;
+}
+.card .badge svg { width: 26px; height: 26px; }
+.card h2 { font: 600 1.4rem var(--display); padding-right: 36px; }
+.card .hint { color: var(--muted); font-size: 0.95rem; margin-top: 4px; }
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.center { justify-content: center; }
+.c-pink { --c: var(--pink); } .c-lav { --c: var(--lav); } .c-mint { --c: var(--mint); }
+.c-butter { --c: var(--butter); } .c-sky { --c: var(--sky); }
+
+@media (min-width: 640px) {
+  .tools { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .w4, .w3, .mid-full { grid-column: 1 / -1; }
+}
+@media (min-width: 980px) {
+  .tools { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .w4 { grid-column: span 4; }
+  .w3 { grid-column: span 3; }
+  .w2 { grid-column: span 2; }
+  .mid-full { grid-column: span 2; }
+}
+
+/* exams */
+.exam-form { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 11rem) auto; gap: 10px; }
+input[type="text"], input[type="date"] {
+  width: 100%; min-width: 0; background: var(--field); border: 2px solid var(--line); border-radius: 14px; padding: 0.62rem 0.85rem;
+}
+input[type="text"]:focus, input[type="date"]:focus { border-color: var(--pink); outline: none; }
+.exam-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.exam { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 16px; align-items: center; padding: 12px 14px; background: var(--field); border: 2px solid var(--line); border-radius: 20px; }
+.exam .days { font: 600 2.1rem/1 var(--display); min-width: 3.4ch; text-align: center; font-variant-numeric: tabular-nums; }
+.exam .days small { display: block; font: 700 0.68rem var(--body); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+.exam.soon .days { color: var(--hot); }
+.exam.done { opacity: .6; }
+.exam .ename { font-weight: 800; overflow-wrap: anywhere; }
+.exam .edate { color: var(--muted); font-size: 0.9rem; }
+.x { border: 0; background: transparent; color: var(--muted); font-size: 1.4rem; line-height: 1; cursor: pointer; padding: 6px 10px; border-radius: 10px; }
+.x:hover { color: var(--hot); }
+.empty { color: var(--muted); padding: 18px; border: 2px dashed var(--line); border-radius: 20px; text-align: center; font-weight: 600; }
+@media (max-width: 520px) { .exam-form { grid-template-columns: minmax(0, 1fr); } }
+
+/* timer */
+.ring-wrap { position: relative; width: 176px; margin-inline: auto; }
+.ring-wrap svg { width: 100%; height: auto; display: block; transform: rotate(-90deg); }
+.ring-track { fill: none; stroke: var(--line); stroke-width: 12; }
+.ring-prog { fill: none; stroke: var(--pink); stroke-width: 12; stroke-linecap: round; transition: stroke-dashoffset .25s linear; }
+.ring-time { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; font: 500 2.1rem var(--mono); font-variant-numeric: tabular-nums; }
+.ring-time small { font: 700 0.72rem var(--body); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+
+/* breathe */
+.breath { position: relative; width: 190px; height: 190px; margin-inline: auto; display: grid; place-items: center; }
+.breath-orb {
+  position: absolute; inset: 0; border-radius: 50%; transform: scale(.55); border: 2.5px solid var(--outline);
+  background: radial-gradient(circle at 35% 30%, #fff, var(--pink) 55%, var(--lav) 130%);
+  transition: transform 4s ease-in-out;
+}
+.breath-label { position: relative; font: 600 1.1rem var(--display); color: #3B2150; text-align: center; line-height: 1.2; }
+.breath-label small { display: block; font: 700 0.75rem var(--body); opacity: .85; margin-top: 2px; }
+
+/* wins */
+.checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.check { display: flex; align-items: center; gap: 12px; padding: 7px 4px; border-radius: 12px; cursor: pointer; }
+.check input { appearance: none; -webkit-appearance: none; flex: none; width: 26px; height: 26px; margin: 0; border: 2.5px solid var(--outline); border-radius: 9px; display: grid; place-content: center; cursor: pointer; background: var(--field); }
+.check input:checked { background: var(--pink); }
+.check input:checked::after { content: ""; width: 6px; height: 12px; border: solid #3B2150; border-width: 0 3px 3px 0; transform: translateY(-1px) rotate(45deg); }
+.check input:checked + span { color: var(--muted); text-decoration: line-through; text-decoration-thickness: 2px; }
+.check span { flex: 1; min-width: 0; overflow-wrap: anywhere; font-weight: 600; }
+.bar { height: 14px; border-radius: 99px; background: var(--field); border: 2px solid var(--outline); overflow: hidden; }
+.bar i { display: block; height: 100%; width: 0; background: var(--mint); border-radius: 99px; transition: width .35s ease; }
+.add-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
+
+/* mood */
+.reply { position: relative; background: var(--soft); border-radius: 20px; padding: 16px 18px; min-height: 3.6em; font-weight: 600; margin-top: 6px; }
+.reply::before { content: ""; position: absolute; top: -9px; left: 28px; width: 18px; height: 18px; background: var(--soft); transform: rotate(45deg); border-radius: 4px 0 0 0; }
+
+/* sticker book */
+.stickers { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+@media (min-width: 560px) { .stickers { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
+.slot { aspect-ratio: 1; max-width: 100%; border-radius: 20px; display: grid; place-items: center; background: var(--field); border: 2px dashed var(--line); color: var(--line); font: 600 1.3rem var(--display); }
+.slot.on { border: 2px solid var(--line); background: var(--soft); }
+.slot svg { width: 72%; height: 72%; filter: drop-shadow(1.5px 0 0 #fff) drop-shadow(-1.5px 0 0 #fff) drop-shadow(0 1.5px 0 #fff) drop-shadow(0 -1.5px 0 #fff) drop-shadow(0 2px 3px rgba(59,33,80,.25)); }
+.slot.pop svg { animation: pop .6s cubic-bezier(.3, 1.6, .5, 1); }
+@keyframes pop { from { transform: scale(0) rotate(-40deg); } to { transform: scale(1) rotate(0); } }
+.caption { color: var(--muted); font-weight: 600; font-size: 0.95rem; }
+
+/* letters */
+.letters { display: grid; gap: 40px; grid-template-columns: minmax(0, 1fr); align-items: start; }
+@media (min-width: 860px) { .letters { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 44px; } }
+.letters h2 { font: 700 2.4rem/1 var(--hand); margin-bottom: 16px; }
+details { background: var(--surface); border: 2.5px solid var(--outline); border-radius: 20px; margin-bottom: 12px; box-shadow: 4px 4px 0 var(--line); padding-inline: 14px; }
+summary { cursor: pointer; font-weight: 800; padding: 13px 2px; list-style: none; display: flex; align-items: center; gap: 10px; }
+summary::-webkit-details-marker { display: none; }
+summary .mini { width: 20px; height: 20px; color: var(--pink); flex: none; }
+summary::after { content: "+"; margin-left: auto; font: 600 1.5rem/1 var(--display); color: var(--hot); flex: none; }
+details[open] summary::after { content: "–"; }
+details p { padding: 0 2px 16px; color: var(--muted); font-weight: 600; max-width: 62ch; }
+
+.paper {
+  --paper: #FFFBEF; --rule: #F3D7E4; --pen: #3B2150;
+  position: relative; background: var(--paper); color: var(--pen); border: 2.5px solid var(--outline); border-radius: 10px 10px 26px 10px;
+  box-shadow: 7px 7px 0 var(--mint); transform: rotate(0.8deg);
+  padding: 34px 24px 26px 56px; font: 700 1.45rem/2.1rem var(--hand);
+  background-image: repeating-linear-gradient(transparent 0 calc(2.1rem - 1.5px), var(--rule) calc(2.1rem - 1.5px) 2.1rem);
+  background-position: 0 1.2rem;
+}
+.paper::before { content: ""; position: absolute; top: 0; bottom: 0; left: 40px; width: 2px; background: var(--pink); opacity: .7; }
+.paper .tape { position: absolute; top: -14px; width: 92px; height: 26px; border: 1.5px solid rgba(59,33,80,.25); border-radius: 3px; }
+.paper .t1 { left: 24px; transform: rotate(-6deg); background: repeating-linear-gradient(45deg, rgba(158,216,255,.9) 0 8px, rgba(255,255,255,.7) 8px 16px); }
+.paper .t2 { right: 24px; transform: rotate(5deg); background: repeating-linear-gradient(45deg, rgba(255,217,102,.9) 0 8px, rgba(255,255,255,.7) 8px 16px); }
+.paper p { max-width: 38ch; }
+.paper p + p { margin-top: 2.1rem; }
+.paper .from { display: flex; align-items: center; gap: 8px; font-size: 2rem; }
+.paper .from svg { width: 28px; height: 28px; color: #D62F73; }
+
+.foot { text-align: center; color: var(--muted); font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.foot svg { width: 18px; height: 18px; color: var(--pink); }
+
+/* toast + confetti */
+#confetti { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 30; }
+.toast {
+  position: fixed; left: 50%; bottom: calc(22px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, 24px);
+  background: var(--ink); color: var(--bg); padding: 12px 22px; border-radius: 999px; font-weight: 800;
+  max-width: calc(100vw - 32px); text-align: center; opacity: 0; pointer-events: none; transition: opacity .25s ease, transform .25s ease; z-index: 31;
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+@media (max-width: 760px) {
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 30px; }
+  .sky { max-width: 440px; }
+  .paper { font-size: 1.3rem; padding-left: 50px; }
+  .paper::before { left: 36px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
+}
+</style>
+
+<svg class="defs" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path fill="currentColor" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.7 4.5 6.4 4.5c2.1 0 3.8 1.2 5.6 3.2 1.8-2 3.5-3.2 5.6-3.2 3.7 0 5.5 3.9 4 7.3C19.5 16.4 12 21 12 21z"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1.5c.7 5 2.7 9 10.5 10.5C14.700 13.500 12.700 17.500 12 22.500 11.300 17.500 9.300 13.500 1.500 12 9.300 10.500 11.300 6.500 12 1.500z"/></symbol>
+    <symbol id="i-flower" viewBox="0 0 24 24">
+      <g fill="currentColor">
+        <circle cx="12" cy="6" r="4.2"/><circle cx="12" cy="6" r="4.2" transform="rotate(72 12 12)"/><circle cx="12" cy="6" r="4.2" transform="rotate(144 12 12)"/>
+        <circle cx="12" cy="6" r="4.2" transform="rotate(216 12 12)"/><circle cx="12" cy="6" r="4.2" transform="rotate(288 12 12)"/>
+      </g>
+      <circle cx="12" cy="12" r="3.2" style="fill:var(--butter)"/>
+    </symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path fill="currentColor" d="M6.500 19a4.500 4.500 0 01-.7-8.950 6 6 0 0111.600 1.200A3.900 3.900 0 0117.500 19z"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path fill="currentColor" d="M20.500 14.500A8.500 8.500 0 019.500 3.500a8.500 8.500 0 1011 11z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="5" fill="currentColor"/>
+      <path d="M12 1.500v3M12 19.500v3M1.500 12h3M19.500 12h3M4.600 4.600l2.100 2.100M17.300 17.300l2.100 2.100M4.600 19.400l2.100-2.100M17.300 6.700l2.100-2.100" stroke="currentColor" stroke-width="2.200" stroke-linecap="round" fill="none"/>
+    </symbol>
+    <symbol id="i-rainbow" viewBox="0 0 24 24">
+      <g fill="none" stroke-width="2.600" stroke-linecap="round">
+        <path d="M3 18a9 9 0 0118 0" stroke="#FF8DB8"/><path d="M5.600 18a6.400 6.400 0 0112.800 0" stroke="#FFD966"/><path d="M8.200 18a3.800 3.800 0 017.600 0" stroke="#9ED8FF"/>
+      </g>
+    </symbol>
+    <symbol id="i-butterfly" viewBox="0 0 24 24">
+      <g fill="currentColor">
+        <path d="M12 12C8 3 2 5 3.500 11c.6 2.400 4 3 8.500 1z"/><path d="M12 12c4-9 10-7 8.500-1-.6 2.400-4 3-8.500 1z"/>
+        <path d="M12 12.500c-5 0-8 5-5.500 8 1.800 2 5-1 5.500-8z"/><path d="M12 12.500c5 0 8 5 5.500 8-1.800 2-5-1-5.500-8z"/>
+      </g>
+      <path d="M12 8v12" stroke="#3B2150" stroke-width="1.800" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M4 20C4 10 10 4 21 4c0 10-5 16-17 16z"/><path d="M4 20L15 9" stroke="#fff" stroke-width="1.600" stroke-linecap="round" fill="none"/>
+    </symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.500C8 8 5.500 11.500 5.500 15a6.500 6.500 0 0013 0C18.500 11.500 16 8 12 2.500z"/></symbol>
+    <symbol id="i-bug" viewBox="0 0 24 24">
+      <circle cx="12" cy="13.500" r="8" fill="currentColor"/>
+      <path d="M12 6v15" stroke="#3B2150" stroke-width="1.600"/>
+      <circle cx="8.300" cy="11" r="1.600" fill="#3B2150"/><circle cx="15.700" cy="11" r="1.600" fill="#3B2150"/><circle cx="8.800" cy="16" r="1.400" fill="#3B2150"/><circle cx="15.200" cy="16" r="1.400" fill="#3B2150"/>
+      <path d="M9 5.500a3 3 0 016 0z" fill="#3B2150"/>
+    </symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24">
+      <rect x="3.500" y="5" width="17" height="15" rx="3.500" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M3.500 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M12 17.500s-3-1.800-3-3.600c0-1 .8-1.700 1.600-1.700.6 0 1.100.3 1.400.8.300-.5.800-.8 1.400-.8.800 0 1.600.7 1.600 1.700 0 1.800-3 3.600-3 3.600z" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="13" r="7.500" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M12 9v4.200l2.600 1.600M5 5.500L8 3M19 5.500L16 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    </symbol>
+    <symbol id="i-face" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/>
+      <circle cx="9" cy="10.500" r="1.200" fill="currentColor"/><circle cx="15" cy="10.500" r="1.200" fill="currentColor"/>
+      <path d="M8.500 14.500q3.500 3.500 7 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24">
+      <rect x="3" y="5.500" width="18" height="13" rx="3" fill="currentColor"/>
+      <path d="M4 8l8 5.500L20 8" stroke="#fff" stroke-width="1.800" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="floaties" id="floaties" aria-hidden="true"></div>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><svg viewBox="0 0 24 24"><use href="#i-heart"/></svg>Adriana's Finals Corner</div>
+    <button class="btn small" id="themeBtn" type="button">Dark mode</button>
+  </header>
+
+  <section class="hero" aria-labelledby="greet">
+    <div>
+      <p class="eyebrow" id="dateLine"></p>
+      <h1 id="greet">Hello, <span class="name">Adriana</span></h1>
+      <div class="note">
+        <p class="msg" id="dailyMsg" aria-live="polite"></p>
+        <p class="sig">love, CJ <svg viewBox="0 0 24 24"><use href="#i-heart"/></svg></p>
+      </div>
+      <div class="hero-actions">
+        <button class="btn pink" id="boostBtn" type="button">Hype me up</button>
+        <button class="btn" id="anotherBtn" type="button">Another note</button>
+      </div>
+      <p class="nudge" id="nudge" hidden></p>
+    </div>
+    <div class="sky" id="sky" aria-hidden="true">
+      <svg viewBox="0 0 400 290" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" style="stop-color:var(--sky-top)"/>
+            <stop offset="1" style="stop-color:var(--sky-bot)"/>
+          </linearGradient>
+          <radialGradient id="glow">
+            <stop offset="0" stop-color="#FFF1A8" stop-opacity=".95"/>
+            <stop offset="1" stop-color="#FFF1A8" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="400" height="290" fill="url(#skyGrad)"/>
+        <g class="stars" fill="#FFF3D6">
+          <circle cx="52" cy="46" r="2"/><circle cx="110" cy="92" r="1.5"/><circle cx="168" cy="38" r="2.2"/>
+          <circle cx="262" cy="70" r="1.8"/><circle cx="330" cy="40" r="2.2"/><circle cx="360" cy="110" r="1.4"/>
+          <circle cx="86" cy="140" r="1.3"/><circle cx="300" cy="150" r="1.7"/>
+        </g>
+        <g class="cloud a" style="color:#fff"><svg x="20" y="48" width="86" height="86" viewBox="0 0 24 24" opacity=".95"><use href="#i-cloud"/></svg></g>
+        <g class="cloud b" style="color:#fff"><svg x="282" y="92" width="76" height="76" viewBox="0 0 24 24" opacity=".9"><use href="#i-cloud"/></svg></g>
+        <path d="M30 245 Q200 -40 370 245" fill="none" stroke-width="2.500" stroke-dasharray="1 10" stroke-linecap="round" style="stroke:var(--arc)"/>
+        <g id="orb">
+          <g class="bob">
+            <circle r="68" fill="url(#glow)"/>
+            <g class="rays" stroke="#FFD24D" stroke-width="5" stroke-linecap="round">
+              <line x1="35" y1="0" x2="44" y2="0"/><line x1="35" y1="0" x2="44" y2="0" transform="rotate(45)"/>
+              <line x1="35" y1="0" x2="44" y2="0" transform="rotate(90)"/><line x1="35" y1="0" x2="44" y2="0" transform="rotate(135)"/>
+              <line x1="35" y1="0" x2="44" y2="0" transform="rotate(180)"/><line x1="35" y1="0" x2="44" y2="0" transform="rotate(225)"/>
+              <line x1="35" y1="0" x2="44" y2="0" transform="rotate(270)"/><line x1="35" y1="0" x2="44" y2="0" transform="rotate(315)"/>
+            </g>
+            <circle id="orbDisc" r="28" fill="#FFD24D" stroke="#3B2150" stroke-width="2.800"/>
+            <g id="faceDay">
+              <ellipse class="eye" cx="-10" cy="-3" rx="3" ry="4" fill="#3B2150"/><ellipse class="eye" cx="10" cy="-3" rx="3" ry="4" fill="#3B2150"/>
+              <circle cx="-9" cy="-4.500" r="1.100" fill="#fff"/><circle cx="11" cy="-4.500" r="1.100" fill="#fff"/>
+              <ellipse cx="-17" cy="6" rx="5" ry="3.200" fill="#FF8DB8" opacity=".75"/><ellipse cx="17" cy="6" rx="5" ry="3.200" fill="#FF8DB8" opacity=".75"/>
+              <path d="M-5.500 5 Q0 12 5.500 5" fill="none" stroke="#3B2150" stroke-width="2.400" stroke-linecap="round"/>
+            </g>
+            <g id="faceNight" display="none">
+              <path d="M-15 -3 Q-10 2 -5 -3" fill="none" stroke="#3B2150" stroke-width="2.400" stroke-linecap="round"/>
+              <path d="M5 -3 Q10 2 15 -3" fill="none" stroke="#3B2150" stroke-width="2.400" stroke-linecap="round"/>
+              <ellipse cx="-17" cy="6" rx="5" ry="3.200" fill="#FF8DB8" opacity=".75"/><ellipse cx="17" cy="6" rx="5" ry="3.200" fill="#FF8DB8" opacity=".75"/>
+              <path d="M-3.500 8 Q0 11 3.500 8" fill="none" stroke="#3B2150" stroke-width="2.400" stroke-linecap="round"/>
+            </g>
+            <g class="zzz" fill="#fff" font-family="Caveat, cursive" font-weight="700">
+              <text x="26" y="-26" font-size="20">z</text><text x="38" y="-40" font-size="15">z</text>
+            </g>
+          </g>
+        </g>
+        <path d="M0 252 Q90 206 180 240 T400 230 V290 H0Z" style="fill:var(--hill-a)"/>
+        <path d="M0 278 Q120 240 230 268 T400 260 V290 H0Z" style="fill:var(--hill-b)"/>
+        <g>
+          <svg x="48" y="248" width="20" height="20" viewBox="0 0 24 24" style="color:#fff"><use href="#i-flower"/></svg>
+          <svg x="104" y="243" width="18" height="18" viewBox="0 0 24 24" style="color:#FF8DB8"><use href="#i-flower"/></svg>
+          <svg x="172" y="253" width="22" height="22" viewBox="0 0 24 24" style="color:#fff"><use href="#i-flower"/></svg>
+          <svg x="362" y="256" width="20" height="20" viewBox="0 0 24 24" style="color:#FF8DB8"><use href="#i-flower"/></svg>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <div class="strip" aria-label="Your progress today">
+    <span class="pill" id="stStreak"></span>
+    <span class="pill" id="stFocus"></span>
+    <span class="pill" id="stWins"></span>
+    <span class="pill" id="stExam"></span>
+  </div>
+
+  <section class="tools" aria-label="Tools for exam season">
+    <article class="card w4 c-pink" id="examCard">
+      <span class="badge" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-calendar"/></svg></span>
+      <div>
+        <h2>Exam countdown</h2>
+        <p class="hint">Add each paper and watch the days shrink. Every one you finish is one less to worry about.</p>
+      </div>
+      <form class="exam-form" id="examForm">
+        <label class="sr-only" for="examName">Exam name</label>
+        <input type="text" id="examName" placeholder="Subject, e.g. Mathematics Paper 1" maxlength="60" autocomplete="off">
+        <label class="sr-only" for="examDate">Exam date</label>
+        <input type="date" id="examDate">
+        <button class="btn primary" type="submit">Add exam</button>
+      </form>
+      <ul class="exam-list" id="examList"></ul>
+    </article>
+
+    <article class="card w2 c-lav" id="timerCard">
+      <span class="badge" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-clock"/></svg></span>
+      <div>
+        <h2>Focus timer</h2>
+        <p class="hint">One thing at a time. Phone away. Every session earns a sticker.</p>
+      </div>
+      <div class="row center" id="modes" role="group" aria-label="Timer length">
+        <button class="chip" type="button" data-min="25" data-mode="focus" aria-pressed="true">Focus 25</button>
+        <button class="chip" type="button" data-min="45" data-mode="focus" aria-pressed="false">Deep 45</button>
+        <button class="chip" type="button" data-min="5" data-mode="break" aria-pressed="false">Break 5</button>
+      </div>
+      <div class="ring-wrap">
+        <svg viewBox="0 0 160 160" aria-hidden="true">
+          <circle class="ring-track" cx="80" cy="80" r="70"/>
+          <circle class="ring-prog" id="ringProg" cx="80" cy="80" r="70" stroke-dasharray="439.82" stroke-dashoffset="439.82"/>
+        </svg>
+        <div class="ring-time"><span id="timeText" role="timer">25:00</span><small id="timeMode">focus</small></div>
+      </div>
+      <div class="row center">
+        <button class="btn primary" id="timerStart" type="button">Start</button>
+        <button class="btn" id="timerReset" type="button">Reset</button>
+      </div>
+    </article>
+
+    <article class="card w2 c-mint" id="breatheCard">
+      <span class="badge" aria-hidden="true"><svg viewBox="0 0 24 24" style="color:#3B2150"><use href="#i-cloud"/></svg></span>
+      <div>
+        <h2>Breathe</h2>
+        <p class="hint">In for 4, hold for 4, out for 6. Three rounds is enough to settle your nerves.</p>
+      </div>
+      <div class="breath">
+        <div class="breath-orb" id="orbBreath"></div>
+        <div class="breath-label"><span id="breathText">Ready</span><small id="breathRound">&nbsp;</small></div>
+      </div>
+      <div class="row center"><button class="btn primary" id="breathBtn" type="button">Start breathing</button></div>
+    </article>
+
+    <article class="card w2 mid-full c-butter" id="winsCard">
+      <span class="badge" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-star"/></svg></span>
+      <div>
+        <h2>Today's wins</h2>
+        <p class="hint">Looking after yourself counts as studying. Tick them all for a sticker.</p>
+      </div>
+      <div class="bar" aria-hidden="true"><i id="winsBar"></i></div>
+      <ul class="checks" id="winsList"></ul>
+      <form class="add-row" id="winForm">
+        <label class="sr-only" for="winInput">Add your own win</label>
+        <input type="text" id="winInput" placeholder="Add your own" maxlength="50" autocomplete="off">
+        <button class="btn small" type="submit">Add</button>
+      </form>
+    </article>
+
+    <article class="card w3 c-sky" id="moodCard">
+      <span class="badge" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-face"/></svg></span>
+      <div>
+        <h2>How are you feeling?</h2>
+        <p class="hint">Any answer is allowed here.</p>
+      </div>
+      <div class="row" id="moods" role="group" aria-label="Mood"></div>
+      <p class="reply" id="moodReply">Pick one and I'll tell you what I'd say if I were sitting next to you.</p>
+    </article>
+
+    <article class="card w3 c-pink" id="stickerCard">
+      <span class="badge" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-sparkle"/></svg></span>
+      <div>
+        <h2>Sticker book</h2>
+        <p class="hint">Finish a focus session or tick off every win in a day and a new sticker lands here.</p>
+      </div>
+      <div class="stickers" id="stickers"></div>
+      <p class="caption" id="stickerCaption"></p>
+    </article>
+  </section>
+
+  <section class="letters" aria-label="Letters from CJ">
+    <div>
+      <h2>Open when…</h2>
+      <details><summary><svg class="mini" viewBox="0 0 24 24"><use href="#i-mail"/></svg>You're stressed out</summary><p>Put the pen down for a minute. Breathe in for four, out for six. The stress you feel is your brain trying to protect you, so thank it and tell it you're okay. You've prepared more than you realise, and all you need to do now is the next small thing.</p></details>
+      <details><summary><svg class="mini" viewBox="0 0 24 24"><use href="#i-mail"/></svg>You can't focus</summary><p>That's normal and it doesn't mean you're failing. Set the focus timer for 25 minutes, put your phone in another room and pick one topic. If your head is too loud, walk for ten minutes first, then come back. Starting badly still counts as starting.</p></details>
+      <details><summary><svg class="mini" viewBox="0 0 24 24"><use href="#i-mail"/></svg>You don't feel smart enough</summary><p>That voice is lying to you. Being nervous about exams is what happens when someone cares, and you care a lot. Think about everything you have learned this year. Nobody gets this far by accident.</p></details>
+      <details><summary><svg class="mini" viewBox="0 0 24 24"><use href="#i-mail"/></svg>You just finished a paper</summary><p>Stop. Don't replay it and don't compare answers with anyone. It's done and you did your best. Eat something, rest your head, and get ready for the next one. I'm proud of you for walking in and finishing it.</p></details>
+      <details><summary><svg class="mini" viewBox="0 0 24 24"><use href="#i-mail"/></svg>It's the night before an exam</summary><p>Close the books at a sensible hour. Pack your things, set two alarms and go to sleep. Nothing you read in the last hour is worth as much as a rested brain tomorrow. You know this already. I'll be cheering for you in the morning.</p></details>
+    </div>
+    <div class="paper">
+      <span class="tape t1"></span><span class="tape t2"></span>
+      <p>Dear Adriana,</p>
+      <p>I made this little corner so you'd have something that tells you every day what I already believe: you've got this.</p>
+      <p>Exams are loud. They make it feel like everything hangs on one paper, one morning. It doesn't. You are so much more than a mark, and you've already shown how strong you are by getting this far.</p>
+      <p>Whatever the results turn out to be, I'm proud of you. For the late nights, the early mornings, and every time you wanted to stop and kept going anyway.</p>
+      <p>P.S. Drink some water. I mean it.</p>
+      <p class="from">CJ <svg viewBox="0 0 24 24"><use href="#i-heart"/></svg></p>
+    </div>
+  </section>
+
+  <p class="foot"><svg viewBox="0 0 24 24"><use href="#i-heart"/></svg>Made for you by CJ. Go and be brilliant.</p>
+</div>
+
+<canvas id="confetti" aria-hidden="true"></canvas>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  "use strict";
+  var $ = function (s) { return document.querySelector(s); };
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- storage ---------- */
+  function load(key, def) {
+    try { var v = localStorage.getItem("adriana:" + key); return v ? JSON.parse(v) : def; } catch (e) { return def; }
+  }
+  function save(key, val) {
+    try { localStorage.setItem("adriana:" + key, JSON.stringify(val)); } catch (e) {}
+  }
+
+  /* ---------- dates ---------- */
+  function keyOf(d) {
+    return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+  }
+  var now = new Date();
+  var today = keyOf(now);
+  function dayOfYear(d) { return Math.floor((d - new Date(d.getFullYear(), 0, 0)) / 864e5); }
+  function parseKey(k) { var p = k.split("-"); return new Date(+p[0], +p[1] - 1, +p[2]); }
+  function daysUntil(k) {
+    var t = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    return Math.round((parseKey(k) - t) / 864e5);
+  }
+
+  /* ---------- floating decorations ---------- */
+  (function () {
+    var spec = [
+      ["heart", "#FF8DB8", 22, 4, 12], ["sparkle", "#FFD966", 18, 92, 8], ["star", "#BBA8FF", 20, 8, 46], ["heart", "#BBA8FF", 16, 95, 40],
+      ["sparkle", "#8EE3C2", 16, 3, 78], ["heart", "#FF8DB8", 26, 90, 70], ["star", "#FFD966", 16, 48, 4], ["sparkle", "#FF8DB8", 14, 55, 92],
+      ["heart", "#9ED8FF", 14, 20, 90], ["star", "#FF8DB8", 14, 80, 22]
+    ];
+    var host = $("#floaties");
+    spec.forEach(function (s, i) {
+      var el = document.createElement("span");
+      el.className = "floaty";
+      el.style.cssText = "left:" + s[3] + "%;top:" + s[4] + "%;width:" + s[2] + "px;height:" + s[2] + "px;color:" + s[1] + ";--dur:" + (7 + (i % 5) * 1.6) + "s;--delay:-" + (i * 1.3) + "s";
+      el.innerHTML = "<svg viewBox=\"0 0 24 24\"><use href=\"#i-" + s[0] + "\"/></svg>";
+      host.appendChild(el);
+    });
+  })();
+
+  /* ---------- toast + confetti ---------- */
+  var toastEl = $("#toast"), toastTimer;
+  function toast(msg) {
+    toastEl.textContent = msg;
+    toastEl.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toastEl.classList.remove("show"); }, 3800);
+  }
+
+  var cv = $("#confetti"), cx = cv.getContext("2d"), parts = [], raf = 0;
+  var colors = ["#FF8DB8", "#FFD966", "#BBA8FF", "#8EE3C2", "#9ED8FF", "#FFFFFF"];
+  function heartPath(c, s) {
+    c.beginPath(); c.moveTo(0, s * 0.4);
+    c.bezierCurveTo(-s * 0.75, -s * 0.05, -s * 0.4, -s * 0.7, 0, -s * 0.28);
+    c.bezierCurveTo(s * 0.4, -s * 0.7, s * 0.75, -s * 0.05, 0, s * 0.4);
+    c.closePath();
+  }
+  function burst(x, y, n) {
+    if (reduceMotion) return;
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    cv.width = innerWidth * dpr; cv.height = innerHeight * dpr;
+    cx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    for (var i = 0; i < (n || 110); i++) {
+      var a = Math.random() * Math.PI * 2, s = 4 + Math.random() * 9, heart = i % 3 !== 0;
+      parts.push({ x: x, y: y, vx: Math.cos(a) * s, vy: Math.sin(a) * s - 6, s: heart ? 12 + Math.random() * 10 : 6 + Math.random() * 6, r: Math.random() * 6, vr: (Math.random() - .5) * .3, c: colors[i % colors.length], h: heart, t: 0, max: 90 + Math.random() * 60 });
+    }
+    if (!raf) raf = requestAnimationFrame(frame);
+  }
+  function frame() {
+    cx.clearRect(0, 0, innerWidth, innerHeight);
+    parts = parts.filter(function (p) { return p.t < p.max && p.y < innerHeight + 40; });
+    parts.forEach(function (p) {
+      p.t++; p.vy += 0.26; p.vx *= 0.99; p.x += p.vx; p.y += p.vy; p.r += p.vr;
+      cx.save(); cx.translate(p.x, p.y); cx.rotate(p.h ? Math.sin(p.r) * 0.5 : p.r);
+      cx.globalAlpha = Math.max(0, 1 - p.t / p.max);
+      cx.fillStyle = p.c;
+      if (p.h) { heartPath(cx, p.s); cx.fill(); } else { cx.fillRect(-p.s / 2, -p.s / 3, p.s, p.s * 0.6); }
+      cx.restore();
+    });
+    if (parts.length) { raf = requestAnimationFrame(frame); }
+    else { raf = 0; cx.clearRect(0, 0, innerWidth, innerHeight); }
+  }
+  function burstFrom(el, n) {
+    var r = el.getBoundingClientRect();
+    burst(r.left + r.width / 2, r.top + r.height / 2, n);
+  }
+
+  function beep() {
+    try {
+      var A = window.AudioContext || window.webkitAudioContext; if (!A) return;
+      var c = new A();
+      [660, 880, 1100].forEach(function (f, i) {
+        var o = c.createOscillator(), g = c.createGain(), t = c.currentTime + i * 0.18;
+        o.type = "sine"; o.frequency.value = f; o.connect(g); g.connect(c.destination);
+        g.gain.setValueAtTime(0.0001, t);
+        g.gain.exponentialRampToValueAtTime(0.14, t + 0.03);
+        g.gain.exponentialRampToValueAtTime(0.0001, t + 0.35);
+        o.start(t); o.stop(t + 0.4);
+      });
+    } catch (e) {}
+  }
+
+  /* ---------- theme ---------- */
+  var root = document.documentElement, themeBtn = $("#themeBtn");
+  function currentTheme() {
+    return root.getAttribute("data-theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  }
+  function themeLabel() { themeBtn.textContent = currentTheme() === "dark" ? "Light mode" : "Dark mode"; }
+  var savedTheme = load("theme", null);
+  if (savedTheme) root.setAttribute("data-theme", savedTheme);
+  themeLabel();
+  themeBtn.addEventListener("click", function () {
+    var next = currentTheme() === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next); save("theme", next); themeLabel();
+  });
+
+  /* ---------- hero: greeting, sun friend, daily note ---------- */
+  var hour = now.getHours() + now.getMinutes() / 60;
+  var greetWord = hour >= 5 && hour < 12 ? "Good morning" : hour >= 12 && hour < 17 ? "Good afternoon" : hour >= 17 && hour < 21 ? "Good evening" : "Hello";
+  $("#greet").innerHTML = greetWord + ", <span class=\"name\">Adriana</span>";
+  $("#dateLine").textContent = now.toLocaleDateString("en-ZA", { weekday: "long", day: "numeric", month: "long" });
+
+  if (hour >= 22.5 || hour < 4.5) {
+    var nd = $("#nudge"); nd.hidden = false;
+    nd.textContent = "It's late. Sleep is part of studying, so be kind to your brain tonight.";
+  }
+
+  var isDay = hour >= 6 && hour < 18;
+  var sky = $("#sky");
+  var t;
+  if (isDay) { t = (hour - 6) / 12; }
+  else {
+    var h2 = hour >= 18 ? hour - 18 : hour + 6;
+    t = h2 / 12;
+    sky.classList.add("night");
+    $("#orbDisc").setAttribute("fill", "#F4EEFF");
+    $("#faceDay").setAttribute("display", "none");
+    $("#faceNight").removeAttribute("display");
+  }
+  t = Math.min(0.95, Math.max(0.05, t));
+  var ox = (1 - t) * (1 - t) * 30 + 2 * (1 - t) * t * 200 + t * t * 370;
+  var oy = (1 - t) * (1 - t) * 245 + 2 * (1 - t) * t * -40 + t * t * 245;
+  oy = Math.min(oy, 210);
+  $("#orb").setAttribute("transform", "translate(" + ox.toFixed(1) + " " + oy.toFixed(1) + ")");
+
+  var messages = [
+    "You already know more than you think you do. Go and prove it to yourself today.",
+    "One paper at a time. One page at a time. One breath at a time. That's the whole plan.",
+    "Rest isn't the opposite of working hard. It's part of working hard. Take the break.",
+    "I'm not worried about you for a second. You've handled harder things than this.",
+    "You don't have to feel ready. You just have to show up and do your best with what you have.",
+    "Every hour you've put in is already working for you, even on the days it doesn't feel like it.",
+    "Be as kind to yourself as you would be to me if I were the one writing exams.",
+    "Small steps count. One chapter today beats a perfect plan you never start.",
+    "If today goes badly, tomorrow is still a fresh page. You're allowed to start again.",
+    "Your worth was never on the exam paper. But I know you're going to do brilliantly anyway.",
+    "Drink some water, stretch your shoulders, then get back to it. You're doing great.",
+    "I'm proud of you. Not for the marks. For not giving up when it got heavy.",
+    "Nerves just mean you care. Take that energy and point it at the next question.",
+    "You've been preparing for this for a long time. Trust the work you've already done.",
+    "Don't compare your chapter 3 to anyone else's chapter 10. Run your own race.",
+    "Eat something proper today. A good brain needs good fuel, and you deserve to feel good.",
+    "You can be tired and capable at the same time. Both are true.",
+    "A bad practice paper is just a map of what to fix. It says nothing about who you are.",
+    "Someone out here is cheering for you loudly. Yes, that's me.",
+    "Finish today's list, then stop. Tomorrow's work can wait for tomorrow's you.",
+    "The finish line is closer than it felt yesterday. Keep walking.",
+    "Read the question twice. Breathe once. Then write what you know. You know a lot.",
+    "You've got discipline, you've got heart, and you've got this.",
+    "Hard weeks end. This one will too, and you'll be proud of how you carried it.",
+    "Sleep is a study technique. Use it tonight.",
+    "Progress isn't always loud. Sometimes it's just you opening the book again.",
+    "However this turns out, you gave it everything. That's already a win.",
+    "You're not behind. You're exactly where you need to be to take the next step.",
+    "Look how far you've come since the start of the year. Now go and finish strong.",
+    "Today only asks one thing of you: do the next right thing, then the one after that."
+  ];
+  var msgEl = $("#dailyMsg"), offset = 0;
+  function showMsg() { msgEl.textContent = messages[(dayOfYear(now) + offset) % messages.length]; }
+  showMsg();
+  $("#anotherBtn").addEventListener("click", function () {
+    offset++;
+    msgEl.classList.add("fade");
+    setTimeout(function () { showMsg(); msgEl.classList.remove("fade"); }, reduceMotion ? 0 : 220);
+  });
+  var boosts = [
+    "Deep breath, Adriana. You've got this.",
+    "You're smarter than your nerves.",
+    "CJ is proud of you. Right now. Today.",
+    "Look at you, still showing up. That's strength.",
+    "You were made for hard things. Go.",
+    "One more page. You can do one more page.",
+    "Future you is already thanking you.",
+    "You're doing better than you think.",
+    "You are prepared. You are capable. You are loved.",
+    "You are so much more than a mark."
+  ];
+  var boostIdx = Math.floor(Math.random() * boosts.length);
+  $("#boostBtn").addEventListener("click", function (e) {
+    toast(boosts[boostIdx % boosts.length]); boostIdx++;
+    burstFrom(e.currentTarget, 130);
+  });
+
+  /* ---------- streak ---------- */
+  var visits = load("visits", []);
+  if (visits.indexOf(today) === -1) { visits.push(today); save("visits", visits.slice(-400)); }
+  var streak = 0;
+  (function () {
+    var d = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    while (visits.indexOf(keyOf(d)) !== -1) { streak++; d.setDate(d.getDate() - 1); }
+  })();
+  function weekHearts() {
+    var s = "";
+    for (var i = 6; i >= 0; i--) {
+      var d = new Date(now.getFullYear(), now.getMonth(), now.getDate() - i);
+      s += "<svg class=\"hrt" + (visits.indexOf(keyOf(d)) !== -1 ? " on" : "") + "\" viewBox=\"0 0 24 24\"><use href=\"#i-heart\"/></svg>";
+    }
+    return "<span class=\"hearts\" aria-hidden=\"true\">" + s + "</span>";
+  }
+
+  /* ---------- sticker book ---------- */
+  var stickerDefs = [
+    ["heart", "--pink"], ["star", "--butter"], ["flower", "--lav"], ["cloud", "--sky"], ["sparkle", "--butter"], ["moon", "--lav"],
+    ["sun", "--butter"], ["rainbow", ""], ["butterfly", "--pink"], ["leaf", "--mint"], ["drop", "--sky"], ["bug", "--hot"]
+  ];
+  var stk = load("stickers", { n: 0, winsDay: "" });
+  function renderStickers(popIdx) {
+    var box = $("#stickers"); box.textContent = "";
+    var have = Math.min(stk.n, stickerDefs.length);
+    stickerDefs.forEach(function (d, i) {
+      var slot = document.createElement("div");
+      if (i < have) {
+        slot.className = "slot on" + (i === popIdx ? " pop" : "");
+        slot.innerHTML = "<svg viewBox=\"0 0 24 24\" style=\"" + (d[1] ? "color:var(" + d[1] + ")" : "") + "\" aria-hidden=\"true\"><use href=\"#i-" + d[0] + "\"/></svg>";
+        slot.setAttribute("role", "img"); slot.setAttribute("aria-label", "Sticker " + (i + 1));
+      } else {
+        slot.className = "slot"; slot.textContent = "?";
+      }
+      box.appendChild(slot);
+    });
+    $("#stickerCaption").textContent = stk.n === 0
+      ? "Your book is empty. Finish a focus session to get the very first sticker."
+      : stk.n + " sticker" + (stk.n === 1 ? "" : "s") + " earned" + (stk.n >= stickerDefs.length ? ". Book full, you absolute legend." : ". " + (stickerDefs.length - stk.n) + " to go.");
+  }
+  function earnSticker() {
+    stk.n++; save("stickers", stk);
+    renderStickers(Math.min(stk.n, stickerDefs.length) - 1);
+  }
+
+  /* ---------- status pills ---------- */
+  var focusStore = load("focus", { date: today, n: 0 });
+  if (focusStore.date !== today) focusStore = { date: today, n: 0 };
+  var exams = load("exams", []);
+  var winsStore;
+
+  function strip() {
+    $("#stStreak").innerHTML = weekHearts() + (streak <= 1 ? "<b>Day 1</b> of showing up" : "<b>" + streak + " days</b> in a row");
+    $("#stFocus").innerHTML = "<b>" + focusStore.n + "</b> focus session" + (focusStore.n === 1 ? "" : "s") + " today";
+    var done = winsStore.items.filter(function (w) { return w.d; }).length;
+    $("#stWins").innerHTML = "<b>" + done + " of " + winsStore.items.length + "</b> wins ticked";
+    var upcoming = exams.filter(function (e) { return daysUntil(e.date) >= 0; }).sort(function (a, b) { return a.date < b.date ? -1 : 1; })[0];
+    if (!upcoming) { $("#stExam").innerHTML = "No exams added yet"; return; }
+    var d = daysUntil(upcoming.date);
+    $("#stExam").innerHTML = "Next paper: <b>" + (d === 0 ? "today" : d === 1 ? "tomorrow" : "in " + d + " days") + "</b>";
+  }
+
+  /* ---------- exams ---------- */
+  var examList = $("#examList");
+  function renderExams() {
+    examList.textContent = "";
+    if (!exams.length) {
+      var li = document.createElement("li");
+      li.className = "empty";
+      li.textContent = "No exams yet. Add your first paper above and the countdown starts right here.";
+      examList.appendChild(li);
+      return;
+    }
+    exams.slice().sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; }).forEach(function (e) {
+      var d = daysUntil(e.date);
+      var li = document.createElement("li");
+      li.className = "exam" + (d < 0 ? " done" : d <= 3 ? " soon" : "");
+      var days = document.createElement("div"); days.className = "days";
+      if (d < 0) { days.textContent = "✓"; var s0 = document.createElement("small"); s0.textContent = "done"; days.appendChild(s0); }
+      else if (d === 0) { days.textContent = "Go!"; var s1 = document.createElement("small"); s1.textContent = "today"; days.appendChild(s1); }
+      else { days.textContent = d; var s2 = document.createElement("small"); s2.textContent = d === 1 ? "day" : "days"; days.appendChild(s2); }
+      var mid = document.createElement("div");
+      var nm = document.createElement("div"); nm.className = "ename"; nm.textContent = e.name;
+      var dt = document.createElement("div"); dt.className = "edate";
+      dt.textContent = parseKey(e.date).toLocaleDateString("en-ZA", { weekday: "long", day: "numeric", month: "long" }) + (d === 0 ? ". You've got this." : d < 0 ? ". One down." : "");
+      mid.appendChild(nm); mid.appendChild(dt);
+      var x = document.createElement("button"); x.className = "x"; x.type = "button"; x.setAttribute("aria-label", "Remove " + e.name); x.textContent = "×";
+      x.addEventListener("click", function () {
+        exams = exams.filter(function (q) { return q.id !== e.id; }); save("exams", exams); renderExams(); strip();
+      });
+      li.appendChild(days); li.appendChild(mid); li.appendChild(x);
+      examList.appendChild(li);
+    });
+  }
+  $("#examForm").addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var name = $("#examName").value.trim(), date = $("#examDate").value;
+    if (!name || !date) { toast("Add a subject and a date first"); return; }
+    exams.push({ id: Date.now() + "" + Math.random().toString(36).slice(2, 6), name: name, date: date });
+    save("exams", exams);
+    $("#examName").value = ""; $("#examDate").value = "";
+    renderExams(); strip(); toast("Added. One step closer to done.");
+  });
+
+  /* ---------- focus timer ---------- */
+  var C = 439.82, ring = $("#ringProg");
+  var mode = "focus", total = 25 * 60, left = total, running = false, endAt = 0, tick = null;
+  function fmt(s) { return String(Math.floor(s / 60)).padStart(2, "0") + ":" + String(s % 60).padStart(2, "0"); }
+  function renderTimer() {
+    $("#timeText").textContent = fmt(left);
+    ring.setAttribute("stroke-dashoffset", (C * (left / total)).toFixed(2));
+    $("#timeMode").textContent = mode === "focus" ? "focus" : "break";
+    $("#timerStart").textContent = running ? "Pause" : (left < total ? "Resume" : "Start");
+  }
+  function stopTick() { clearInterval(tick); tick = null; running = false; }
+  function timerUpdate() {
+    left = Math.max(0, Math.ceil((endAt - Date.now()) / 1000));
+    if (left <= 0) {
+      stopTick(); left = 0; renderTimer();
+      if (mode === "focus") {
+        focusStore.n++; save("focus", focusStore);
+        earnSticker(); strip();
+        toast("Session done! You earned a sticker. Take five.");
+      } else { toast("Break over. Ready when you are."); }
+      beep(); burstFrom($("#timerCard"), 100);
+      left = total; running = false; renderTimer();
+      return;
+    }
+    renderTimer();
+  }
+  $("#timerStart").addEventListener("click", function () {
+    if (running) { stopTick(); renderTimer(); return; }
+    running = true; endAt = Date.now() + left * 1000;
+    tick = setInterval(timerUpdate, 250); renderTimer();
+  });
+  $("#timerReset").addEventListener("click", function () { stopTick(); left = total; renderTimer(); });
+  document.querySelectorAll("#modes .chip").forEach(function (b) {
+    b.addEventListener("click", function () {
+      stopTick();
+      document.querySelectorAll("#modes .chip").forEach(function (o) { o.setAttribute("aria-pressed", "false"); });
+      b.setAttribute("aria-pressed", "true");
+      mode = b.getAttribute("data-mode"); total = +b.getAttribute("data-min") * 60; left = total; renderTimer();
+    });
+  });
+  renderTimer();
+
+  /* ---------- breathing ---------- */
+  var breathing = false, bTimers = [], orb = $("#orbBreath"), rounds = 0;
+  var phases = [["Breathe in", 4000, 1], ["Hold", 4000, 1], ["Breathe out", 6000, 0.55]];
+  function clearB() { bTimers.forEach(clearTimeout); bTimers = []; }
+  function runPhase(i) {
+    if (!breathing) return;
+    var p = phases[i % 3];
+    if (i % 3 === 0) { rounds++; $("#breathRound").textContent = "Round " + rounds; }
+    $("#breathText").textContent = p[0];
+    orb.style.transitionDuration = p[1] + "ms";
+    orb.style.transform = "scale(" + p[2] + ")";
+    bTimers.push(setTimeout(function () { runPhase(i + 1); }, p[1]));
+  }
+  $("#breathBtn").addEventListener("click", function () {
+    if (breathing) {
+      breathing = false; clearB(); rounds = 0;
+      orb.style.transitionDuration = "600ms"; orb.style.transform = "scale(.55)";
+      $("#breathText").textContent = "Ready"; $("#breathRound").innerHTML = "&nbsp;";
+      this.textContent = "Start breathing"; return;
+    }
+    breathing = true; rounds = 0; runPhase(0); this.textContent = "Stop";
+  });
+
+  /* ---------- wins ---------- */
+  var defaults = ["Drink enough water", "Eat a proper meal", "Study something, even a little", "Take a real break", "Do one thing that makes you smile"];
+  winsStore = load("wins", null);
+  if (!winsStore || !winsStore.items) {
+    winsStore = { date: today, items: defaults.map(function (t) { return { t: t, d: false, c: false }; }) };
+  } else if (winsStore.date !== today) {
+    winsStore.date = today; winsStore.items.forEach(function (w) { w.d = false; });
+  }
+  function renderWins() {
+    var ul = $("#winsList"); ul.textContent = "";
+    winsStore.items.forEach(function (w, i) {
+      var li = document.createElement("li");
+      var lab = document.createElement("label"); lab.className = "check";
+      var cb = document.createElement("input"); cb.type = "checkbox"; cb.checked = w.d; cb.id = "win" + i;
+      var sp = document.createElement("span"); sp.textContent = w.t;
+      cb.addEventListener("change", function () {
+        w.d = cb.checked; save("wins", winsStore); updateWins(true); strip();
+      });
+      lab.appendChild(cb); lab.appendChild(sp);
+      if (w.c) {
+        var rm = document.createElement("button"); rm.type = "button"; rm.className = "x"; rm.textContent = "×"; rm.setAttribute("aria-label", "Remove " + w.t);
+        rm.addEventListener("click", function (e) {
+          e.preventDefault(); winsStore.items.splice(i, 1); save("wins", winsStore); renderWins(); strip();
+        });
+        lab.appendChild(rm);
+      }
+      li.appendChild(lab); ul.appendChild(li);
+    });
+    updateWins(false);
+  }
+  function updateWins(celebrate) {
+    var done = winsStore.items.filter(function (w) { return w.d; }).length, all = winsStore.items.length;
+    $("#winsBar").style.width = (all ? Math.round(done / all * 100) : 0) + "%";
+    if (celebrate && all && done === all) {
+      burstFrom($("#winsCard"), 110);
+      if (stk.winsDay !== today) {
+        stk.winsDay = today; earnSticker(); strip();
+        toast("Every win ticked! New sticker for you.");
+      } else { toast("Every win ticked. That's a good day."); }
+    }
+  }
+  $("#winForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var v = $("#winInput").value.trim(); if (!v) return;
+    winsStore.items.push({ t: v, d: false, c: true }); save("wins", winsStore);
+    $("#winInput").value = ""; renderWins(); strip();
+  });
+  save("wins", winsStore);
+  renderWins();
+
+  /* ---------- mood ---------- */
+  var moods = [
+    ["Drained", "Then today's job is smaller. Pick the one thing that matters most, do it, and rest without guilt. Tired is not the same as failing."],
+    ["Anxious", "Your nerves are loud because this matters to you. Try the breathing circle, then do five minutes of the easiest topic. Momentum calms things down."],
+    ["Okay", "Okay is a solid place to work from. Steady beats dramatic every time. Keep going at your pace."],
+    ["Good", "I love that. Use it. Tackle the harder topic while you feel sharp, then reward yourself."],
+    ["On fire", "Yes, Adriana! Ride that energy, but keep drinking water and take your breaks. Save some fire for tomorrow."]
+  ];
+  var moodBox = $("#moods"), moodReply = $("#moodReply");
+  var savedMood = load("mood", null);
+  moods.forEach(function (m, i) {
+    var b = document.createElement("button"); b.type = "button"; b.className = "chip"; b.textContent = m[0];
+    b.setAttribute("aria-pressed", savedMood && savedMood.date === today && savedMood.i === i ? "true" : "false");
+    b.addEventListener("click", function () {
+      moodBox.querySelectorAll(".chip").forEach(function (o) { o.setAttribute("aria-pressed", "false"); });
+      b.setAttribute("aria-pressed", "true"); moodReply.textContent = m[1]; save("mood", { date: today, i: i });
+    });
+    moodBox.appendChild(b);
+    if (b.getAttribute("aria-pressed") === "true") moodReply.textContent = m[1];
+  });
+
+  renderExams();
+  renderStickers(-1);
+  strip();
+})();
+</script>
+
+</body></html>
